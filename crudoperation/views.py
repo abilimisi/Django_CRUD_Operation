@@ -19,7 +19,7 @@ def add_show(request):
     else:
         fm = Studentregistration()
     stud = User.objects.all()
-    return render(request, 'enroll/addandstore.html', {'form': fm, 'stu': stud})
+    return render(request, 'enroll/index.html', {'form': fm, 'stu': stud})
 
 
 def delete_data(request, id):
