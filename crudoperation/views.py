@@ -36,8 +36,9 @@ def update_data(request, id):
         fm = Studentregistration(request.POST, instance=pi)
         if fm.is_valid:
             fm.save()
-            return HttpResponseRedirect('/')
             messages.success(request, 'Information updated successfully')
+            return HttpResponseRedirect('/')
+            
     else:
         pi = User.objects.get(pk=id)
         fm = Studentregistration(instance=pi)
